@@ -17,6 +17,10 @@ generate!(extern "C" {
 
     fn create_double(env: Env, value: f64, result: *mut Value) -> Status;
 
+    fn create_date(env: Env, value: f64, result: *mut Value) -> Status;
+
+    fn get_date_value(env: Env, value: Value, result: *mut f64) -> Status;
+
     fn create_object(env: Env, result: *mut Value) -> Status;
 
     fn get_value_bool(env: Env, value: Value, result: *mut bool) -> Status;
@@ -57,6 +61,7 @@ generate!(extern "C" {
     fn is_buffer(env: Env, value: Value, result: *mut bool) -> Status;
     fn is_error(env: Env, value: Value, result: *mut bool) -> Status;
     fn is_array(env: Env, value: Value, result: *mut bool) -> Status;
+    fn is_date(env: Env, value: Value, result: *mut bool) -> Status;
 
     fn get_value_string_utf8(
         env: Env,
